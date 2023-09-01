@@ -7,7 +7,21 @@ const todos = [
   { id: 6, task: "HTML II", isCompleted: true },
 ];
 
-//anonymous function
+//function declaration;
+/**
+ * @param {Object} todo Todo;
+ * @param {string} todo.task;
+ * @param {boolean} todo.isCompleted;
+ * @returns {Array} todo[] todos
+ */
+function addTodo(todo) {
+  if (!todo) throw new Error("todo should be used todo type");
+  const todosLength = todos.length;
+  const newTodo = { id: todosLength + 1, ...todo };
+  return todos.push(newTodo);
+}
+
+//arrow function
 const deleteTodo = (id) => {
   todos.splice(
     todos.findIndex((e) => e.id === id),
@@ -15,6 +29,7 @@ const deleteTodo = (id) => {
   );
   return todos;
 };
+
 console.log({ todos });
 deleteTodo(5);
 
