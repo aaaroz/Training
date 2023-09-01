@@ -7,6 +7,7 @@ const todos = [
   { id: 6, task: "HTML II", isCompleted: true },
 ];
 
+//anonymous function
 const deleteTodo = (id) => {
   todos.splice(
     todos.findIndex((e) => e.id === id),
